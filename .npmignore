@@ -1,0 +1,9 @@
+*.log
+/.*/
+/.eslint*
+/.gitignore
+/.npmignore
+/docs/
+/example_app/
+/test/
+!lib

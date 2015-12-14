@@ -1,0 +1,55 @@
+{
+  "name": "radium-bootstrap-grid",
+  "version": "0.0.3",
+  "description": "Bootstrap grid writen in inline styles (mainly for Radium)",
+  "main": "lib/index.js",
+  "jsnext:main": "src/index.js",
+  "author": "Jiri Orsag",
+  "license": "MIT",
+  "homepage": "https://github.com/blueberryapps/radium-bootstrap-grid#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:blueberryapps/radium-bootstrap-grid"
+  },
+  "bugs": {
+    "url": "https://github.com/blueberryapps/radium-bootstrap-grid/issues"
+  },
+  "scripts": {
+    "build": "npm run build:lib",
+    "build:lib": "babel src --out-dir lib",
+    "check": "npm run lint && npm run test",
+    "clean": "rimraf lib",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build"
+  },
+  "keywords": [
+    "inline",
+    "styles",
+    "radium",
+    "grid",
+    "bootstrap",
+    "component",
+    "react",
+    "react-component",
+    "es6"
+  ],
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
+    "eslint": "^1.7.1",
+    "eslint-config-airbnb": "^0.1.0",
+    "eslint-plugin-react": "^3.5.1",
+    "react-pure-render": "^1.0.2",
+    "react-transform-catch-errors": "^1.0.0",
+    "react-transform-hmr": "^1.0.1",
+    "rimraf": "^2.4.3"
+  },
+  "dependencies": {
+    "radium": "^0.15.3",
+    "react": "^0.14.3",
+    "react-router": "^1.0.0"
+  }
+}
