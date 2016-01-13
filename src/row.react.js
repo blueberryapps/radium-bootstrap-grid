@@ -7,14 +7,15 @@ import {row, clearfix} from './grid';
 export default class Row extends Component {
 
   static propTypes = {
-    children: RPT.node
+    children: RPT.node,
+    style:    RPT.object
   }
 
   render() {
-    const {children} = this.props;
+    const {children, style} = this.props;
 
     return (
-      <div style={row}>
+      <div style={[row, style]}>
         {children}
         <div style={clearfix} />
       </div>
