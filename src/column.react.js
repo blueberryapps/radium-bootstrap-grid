@@ -12,11 +12,12 @@ export default class Column extends Component {
     medium:   RPT.number,
     phone:    RPT.number,
     small:    RPT.number,
+    style:    RPT.object,
     tablet:   RPT.number
   }
 
   render() {
-    const {children, large, medium, phone, small, tablet} = this.props;
+    const {children, large, medium, phone, small, style, tablet} = this.props;
 
     return (
       <div
@@ -26,7 +27,8 @@ export default class Column extends Component {
           tablet && columnWidth['ms'][tablet],
           small && columnWidth['sm'][small],
           medium && columnWidth['md'][medium],
-          large && columnWidth['lg'][large]
+          large && columnWidth['lg'][large],
+          style
         ]}
       >
         {children}

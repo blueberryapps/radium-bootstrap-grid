@@ -7,14 +7,15 @@ import {container, clearfix} from './grid';
 export default class Container extends Component {
 
   static propTypes = {
-    children: RPT.node
+    children: RPT.node,
+    style:    RPT.object
   }
 
   render() {
-    const {children} = this.props;
+    const {children, style} = this.props;
 
     return (
-      <div style={container}>
+      <div style={[container, style]}>
         {children}
         <div style={clearfix} />
       </div>
