@@ -7,20 +7,22 @@ import {column, columnWidth} from './grid';
 export default class Column extends Component {
 
   static propTypes = {
-    children: RPT.node,
-    large:    RPT.number,
-    medium:   RPT.number,
-    phone:    RPT.number,
-    small:    RPT.number,
-    style:    RPT.object,
-    tablet:   RPT.number
+    children:  RPT.node,
+    className: RPT.string,
+    large:     RPT.number,
+    medium:    RPT.number,
+    phone:     RPT.number,
+    small:     RPT.number,
+    style:     RPT.object,
+    tablet:    RPT.number
   }
 
   render() {
-    const {children, large, medium, phone, small, style, tablet} = this.props;
+    const {children, className, large, medium, phone, small, style, tablet} = this.props;
 
     return (
       <div
+        className={className}
         style={[
           column,
           phone && columnWidth['xs'][phone],
