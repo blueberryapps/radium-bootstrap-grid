@@ -13,6 +13,7 @@ and you need to add only:
 
 ```js
 import Component from 'react-pure-render/component';
+import Radium from 'radium';
 import React from 'react';
 import {Column, Container, Row} from 'radium-bootstrap-grid';
 
