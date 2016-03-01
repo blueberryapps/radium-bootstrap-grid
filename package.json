@@ -49,7 +49,6 @@
   },
   "dependencies": {
     "radium": "^0.15.3",
-    "react": "^0.14.3",
-    "react-router": "^1.0.0"
+    "react": "^0.14.3"
   }
 }
