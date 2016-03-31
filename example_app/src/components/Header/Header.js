@@ -19,11 +19,8 @@ function Header() {
       <div className={s.container}>
         <Link className={s.brand} to="/">
           <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
-          <span className={s.brandTxt}>BlueberryApps</span>
+          <span className={s.brandTxt}>radium-bootstrap-grid</span>
         </Link>
-        <div className={s.banner}>
-          <h1 className={s.bannerTitle}>radium-bootstrap-grid</h1>
-        </div>
       </div>
     </div>
   );

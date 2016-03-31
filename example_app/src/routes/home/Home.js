@@ -16,7 +16,8 @@ function Home({ news }) {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <h2 className={s.title}>radium-bootstrap-grid</h2>
+        <h2 className={s.h2}>Fixed-width grid layout</h2>
+        <h3 className={s.h3}>radium-bootstrap-grid</h3>
         <p>Note: Original bootstrap doesn't support 480px breakpoint.</p>
         <Container>
           <Row>
@@ -131,7 +132,7 @@ function Home({ news }) {
           </Row>
         </Container>
 
-        <h2 className={s.title}>Original bootstrap</h2>
+        <h3 className={s.h3}>Original bootstrap</h3>
 
         <div className="container">
           <div className="row">
@@ -170,6 +171,37 @@ function Home({ news }) {
             </div>
             <div className="col-xs-6 col-ms-4 col-sm-3 col-md-2 col-lg-1">
               <div className={s.highlightColumn} />
+            </div>
+          </div>
+        </div>
+
+        <h2 className={s.h2}>Offsetting columns</h2>
+
+        <h3 className={s.h3}>radium-bootstrap-grid</h3>
+        <p>TBD</p>
+
+        <h3 className={s.h3}>Original Bootstrap</h3>
+
+        <div clasName="container">
+          <div className="row">
+            <div className="col-md-4">
+              <div className={s.highlightColumn}>.col-md-4</div>
+            </div>
+            <div className="col-md-4 col-md-offset-4">
+              <div className={s.highlightColumn}>.col-md-4 .col-md-offset-4</div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-3 col-md-offset-3">
+              <div className={s.highlightColumn}>.col-md-3 .col-md-offset-3</div>
+            </div>
+            <div className="col-md-3 col-md-offset-3">
+              <div className={s.highlightColumn}>.col-md-3 .col-md-offset-3</div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6 col-md-offset-3">
+              <div className={s.highlightColumn}>.col-md-6 .col-md-offset-3</div>
             </div>
           </div>
         </div>
