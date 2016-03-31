@@ -1,124 +1,100 @@
-<a href="https://este.herokuapp.com/"><img alt="Este.js" src="https://cloud.githubusercontent.com/assets/66249/6515265/b91f0fb8-c388-11e4-857e-c90902e0b7a1.png" width="200"></a>
+## React Starter Kit — "isomorphic" web app boilerplate
 
-[![Circle CI](https://circleci.com/gh/este/este.svg?style=svg)](https://circleci.com/gh/este/este)
-[![Join the chat at https://gitter.im/este/este](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/este/este)
-[![Dependency Status](https://david-dm.org/este/este.svg)](https://david-dm.org/este/este)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Support us on Bountysource](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/banner.png)](https://salt.bountysource.com/teams/react-starter-kit)<br>
 
-> The best dev stack and starter kit for React universal web apps.
+> [React Starter Kit](https://www.reactstarterkit.com) is an opinionated
+> boilerplate for web development built on top of Facebook's
+> [React](https://facebook.github.io/react/) library,
+> [Node.js](https://nodejs.org/) / [Express](http://expressjs.com/) server
+> and [Flux](http://facebook.github.io/flux/) architecture. Containing
+> modern web development tools such as [Webpack](http://webpack.github.io/),
+> [Babel](http://babeljs.io/) and [BrowserSync](http://www.browsersync.io/).
+> Helping you to stay productive following the best practices. A solid starting
+> point for both professionals and newcomers to the industry.
 
-> Forget about [evil frameworks](http://tomasp.net/blog/2015/library-frameworks/), use laser focused libraries and design patterns instead.
+See [demo](http://demo.reactstarterkit.com) &nbsp;|&nbsp;
+[docs](https://github.com/kriasoft/react-starter-kit/tree/master/docs) &nbsp;|&nbsp;
+[to-do list](https://waffle.io/kriasoft/react-starter-kit) &nbsp;|&nbsp;
+join [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) chatroom to stay up to date &nbsp;|&nbsp;
+visit our sponsors:
 
-## Prerequisites
+[![Rollbar - Full-stack error tracking for all apps in any language](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/rollbar.png)](https://rollbar.com/?utm_source=reactstartkit(github)&utm_medium=link&utm_campaign=reactstartkit(github)) &nbsp;&nbsp;
+[![Localize - Translate your web app in minutes](https://dl.dropboxusercontent.com/u/16006521/react-starter-kit/localize.png)](https://localizejs.com/?cid=802&utm_source=rsk)
 
-- [node.js](http://nodejs.org) (v4 is required).
-- [gulp](http://gulpjs.com/) (`npm install -g gulp`)
+### Getting Started
 
-If you are using different node versions on your machine, use `nvm` to manage them.
+  * Follow the [getting started guide](./docs/getting-started.md) to download and run the project
+  * Check the [code recipes](./docs/recipes) used in this boilerplate, or share yours
 
-## Techniques
+### Directory Layout
 
-- Universal JavaScript dev stack for browser, server, mobile.
-- Functional works: App state snapshots, time travel, hot reload everything.
-- [React](http://facebook.github.io/react/) with server side rendering on [expressjs](http://expressjs.com/) backend.
-- [React Native](https://facebook.github.io/react-native/) for iOS and Android (wip).
-- [Redux](http://rackt.github.io/redux/) [Flux](https://facebook.github.io/flux/) with atomic [immutable.js](http://facebook.github.io/immutable-js) app state.
-- ECMAScript 2015+ with [babeljs.io](https://babeljs.io/). [JSX](http://facebook.github.io/react/docs/jsx-in-depth.html) and [Flowtype](http://flowtype.org/) syntax supported. Sourcemaps enabled by default.
-- [react-router](https://github.com/rackt/react-router) for isomorphic routing.
-- Universal/Isomorphic data fetching example.
-- Well tuned [webpack](http://webpack.github.io/) dev stack.
-- [eslint](http://eslint.org/) ([Sublime Text 3 integration](https://github.com/steida/este/wiki/Recommended-Sublime-Text-3-settings#how-to-setup-the-eslint-for-st3))
-- Localization via [formatjs.io](http://formatjs.io/).
-- Simple yet powerfull sync/async validation based on [chriso/validator.js](https://github.com/chriso/validator.js)
-- LESS, SASS, Stylus, or plain CSS with [autoprefixer](https://github.com/postcss/autoprefixer).
-- Long Term Caching.
-- [React Helmet](https://github.com/nfl/react-helmet) for handling Title and Meta changes on server and client
-- And much more.
-
-## Installing
-
-```shell
-git clone https://github.com/este/este.git este-app
-cd este-app
-npm install
+```
+.
+├── /build/                     # The folder for compiled output
+├── /docs/                      # Documentation files for the project
+├── /node_modules/              # 3rd-party libraries and utilities
+├── /src/                       # The source code of the application
+│   ├── /actions/               # Action creators that allow to trigger a dispatch to stores
+│   ├── /components/            # React components
+│   ├── /constants/             # Constants (action types etc.)
+│   ├── /content/               # Static content (plain HTML or Markdown, Jade, you name it)
+│   ├── /core/                  # Core framework and utility functions
+│   ├── /data/                  # GraphQL server schema
+│   ├── /decorators/            # Higher-order React components
+│   ├── /public/                # Static files which are copied into the /build/public folder
+│   ├── /routes/                # Page/screen components along with the routing information
+│   ├── /stores/                # Stores contain the application state and logic
+│   ├── /views/                 # Express.js views for index and error pages
+│   ├── /client.js              # Client-side startup script
+│   ├── /config.js              # Global application settings
+│   ├── /routes.js              # Universal (isomorphic) application routes
+│   └── /server.js              # Server-side startup script
+├── /tools/                     # Build automation scripts and utilities
+│   ├── /lib/                   # Library for utility snippets
+│   ├── /build.js               # Builds the project from source to output (build) folder
+│   ├── /bundle.js              # Bundles the web resources into package(s) through Webpack
+│   ├── /clean.js               # Cleans up the output (build) folder
+│   ├── /copy.js                # Copies static files to output (build) folder
+│   ├── /deploy.js              # Deploys your web application
+│   ├── /run.js                 # Helper function for running build automation tasks
+│   ├── /runServer.js           # Launches (or restarts) Node.js server
+│   ├── /start.js               # Launches the development web server with "live reload"
+│   └── /webpack.config.js      # Configurations for client-side and server-side bundles
+└── package.json                # The list of 3rd party libraries and utilities
 ```
 
-## Start Development
+### Related Projects
 
-- run `gulp`
-- point your browser to [localhost:8000](http://localhost:8000)
-- build something beautiful
+  * [Membership Database](https://github.com/membership/membership.db) — SQL schema boilerplate for user accounts, profiles, roles, and auth claims
+  * [React Static Boilerplate](https://github.com/koistya/react-static-boilerplate) — Generates static websites from React components
+  * [Babel Starter Kit](https://github.com/kriasoft/babel-starter-kit) — Boilerplate for authoring JavaScript/React.js libraries
 
-## Dev Tasks
+### Learn More
 
-- `gulp` run web app in development mode
-- `gulp -p` run web app in production mode
-- `gulp test` test app
+  * [Getting Started with React.js](http://facebook.github.io/react/)
+  * [Getting Started with GraphQL and Relay](https://quip.com/oLxzA1gTsJsE)
+  * [React.js Questions on StackOverflow](http://stackoverflow.com/questions/tagged/reactjs)
+  * [React.js Discussion Board](https://discuss.reactjs.org/)
+  * [Flux Architecture for Building User Interfaces](http://facebook.github.io/flux/)
+  * [Jest - Painless Unit Testing](http://facebook.github.io/jest/)
+  * [Flow - A static type checker for JavaScript](http://flowtype.org/)
+  * [The Future of React](https://github.com/reactjs/react-future)
+  * [Learn ES6](https://babeljs.io/docs/learn-es6/), [ES6 Features](https://github.com/lukehoban/es6features#readme)
 
-## Documentation
+### Support
 
-So you decided to give a chance to this web stack, but where is documentation? Code is documentation itself as it illustrates various patterns, but for start you should read something about [React.js](http://facebook.github.io/react/). Then you should learn [what is the Flux
-application architecture](https://medium.com/brigade-engineering/what-is-the-flux-application-architecture-b57ebca85b9e). Now refresh you JavaScript knowledge about "new" JavaScript - [learn ES6](https://babeljs.io/docs/learn-es6/). This stack uses [immutable.js](http://facebook.github.io/immutable-js/) and class-less design for a [good reason](https://github.com/facebook/immutable-js/#the-case-for-immutability). Check this nice short [video](https://www.youtube.com/watch?v=5yHFTN-_mOo), wouldn't be possible with classic OOP classes everywhere approach. Functional programming is a next (current) big thing, read [why](https://medium.com/javascript-scene/the-dao-of-immutability-9f91a70c88cd). [Express.js](http://expressjs.com/) is used on the [Node.js](http://nodejs.org/api/) based server. Application is [universal](https://medium.com/@mjackson/universal-javascript-4761051b7ae9), so we can share code between browser, server, mobile, whatever easily. Congrats, you're Este.js expert level 1 now :-)
+  * [#react-starter-kit](http://stackoverflow.com/questions/tagged/react-starter-kit) on Stack Overflow — Questions and answers
+  * [#react-starter-kit](https://gitter.im/kriasoft/react-starter-kit) on Gitter — Watch announcements, share ideas and feedback
+  * [GitHub issues](https://github.com/kriasoft/react-starter-kit/issues), or [Scrum board](https://waffle.io/kriasoft/react-starter-kit) — File issues, send feature requests
+  * [appear.in/react](https://appear.in/react) — Open hours! Exchange ideas and experiences (React, GraphQL, Startups, etc.)
+  * [@koistya](https://twitter.com/koistya) on [Codementor](https://www.codementor.io/koistya), or [Skype](http://hatscripts.com/addskype?koistya) — Private consulting
 
-## Links
+### License
 
-- [wiki: Recommended React Components](https://github.com/steida/este/wiki/Recommended-React-Components)
-- [wiki: Recommended Sublime Text 3 Packages](https://github.com/steida/este/wiki/Recommended-Sublime-Text-3-settings)
-- [twitter.com/estejs](https://twitter.com/estejs)
-- [github.com/enaqx/awesome-react](https://github.com/enaqx/awesome-react)
+Copyright © 2014-2016 Kriasoft, LLC. This source code is licensed under the MIT
+license found in the [LICENSE.txt](https://github.com/kriasoft/react-starter-kit/blob/master/LICENSE.txt)
+file. The documentation to the project is licensed under the
+[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/) license.
 
-## Windows
-
-Use this if you are using JEST or another library, which has to be compiled.
-
-- Install Python - Install version 2.7 of Python and add it to your path or/and create a PYTHONPATH environment variable.
-- Install Visual Studio (Express Edition is fine) - We will need this for some of modules that are compiled when we are installing Este. [Download VS Express](https://www.visualstudio.com/en-us/products/visual-studio-express-vs.aspx), get one of the versions that has C++ - Express 2013 for Windows Desktop for example.
-- Set Visual Studio Version Flags - We need to tell node-gyp (something that is used for compiling addons) what version of Visual Studio we want to compile with. You can do this either through an environment variable GYP_MSVS_VERSION. If you are using Express, you have to say GYP_MSVS_VERSION=2013e.
-
-Thanks to [Ryanlanciaux](http://ryanlanciaux.github.io/blog/2014/08/02/using-jest-for-testing-react-components-on-windows/)
-
-## Tips and Tricks
-
-- To check current app state, just open browser console.
-- With functional programming ([SOLID: the next step is Functional](http://blog.ploeh.dk/2014/03/10/solid-the-next-step-is-functional)), we don't need DI containers. We can use plain old [Pure DI](http://blog.ploeh.dk/2014/06/10/pure-di/). Check `injectDependencies` middleware in `configureStore`.
-- Learn immutable.js, for example [Seq](https://github.com/facebook/immutable-js#lazy-seq). Handy even for native arrays and objects. For example, get object values: `Seq(RoomType).toSet().toJS()`
-- Recommended editors are [sublimetext](http://www.sublimetext.com/) and [atom.io](https://atom.io) ([tips](https://github.com/steida/atom-io-settings)).
-
-## FAQ
-
-#### Why do I get EACCES error during `npm install`?
- This indicates that you do not have permission to write to the directories that npm uses to store packages and commands. One possible solution is to change the permission to npm's default directory.
- 1. Find the path to npm's directory:  `npm config get prefix`  For many systems, this will be `/usr/local`
- 2. Change the owner of npm's directory's to the effective name of the current user
- ```
- sudo chown -R `whoami` <directory>
- ```
-
-#### Why does the CSS flicker when starting the app/refreshing it?
-In dev mode, webpack loads all the style inline, which makes them hot reloadable. This behaviour disappears in production mode (`gulp -p`).
-
-#### Does Hapi/SailJS/Restify/Rails work with Este? Do you have any example app for this framework?
-Yes it does. Este is agnostic of what you use in your backend and is completely decoupled from the API. It uses an Express app for server-side rendering, but you can use anything for your API. The only benefit that an Express API has is that it can simply be `use()` by the main app, like any other middleware.
-
-#### Is it possible use XXX library with Este?
-Yes. Este makes little assumptions about your stack, and passing every bit of needed info through props. This is not a framework, nothing prevents you from picking the bits you're interested in.
-
-#### Why Este is pure and why we have to pass data through props?
-Pure means no side effects. Programming without side effects rocks. It allows us to hot reload everything and testing is much easier as well. When component renders only data passed through props, [shouldComponentUpdate](https://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate) can be implemented [only once](https://github.com/este/este/blob/master/src/native/components/Component.react.js#L11) per whole app. One can say it's verbose, but it isn't. It's explicit. And remember, we have to pass only data going to be rendered. Actions have access to app state.
-
-## Training
-- [learn-reactjs.com](http://www.learn-reactjs.com)
-- [javascript-skoleni.cz](http://javascript-skoleni.cz)
-- [DzejEs.cz](http://www.dzejes.cz) - czech articles about Este
-
-## Notes
-
-- Este.js dev stack works on OSX, Linux, and Windows.
-- As a rule of thumb, Este.js supports all evergreen browsers plus last two pieces of IE.
-- Support Este.js development via Bitcoin - [daniel.steigerwald.cz/#donate-estejs](http://daniel.steigerwald.cz/#donate-estejs)
-
-## Credit
-
-<img alt="Este.js" src="https://cloud.githubusercontent.com/assets/66249/6515278/de638916-c388-11e4-8754-184f5b11e770.jpeg" width="200">
-
-made by Daniel Steigerwald, [twitter.com/steida](https://twitter.com/steida), @grabbou and the community
+---
+Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/kriasoft/react-starter-kit/graphs/contributors)
