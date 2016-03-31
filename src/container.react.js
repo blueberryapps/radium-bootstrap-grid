@@ -1,7 +1,7 @@
 import Component from 'react-pure-render/component'
 import Radium from 'radium';
 import React, {PropTypes as RPT} from 'react'
-import {container, clearfix} from './grid';
+import { container, clearfix } from './grid';
 
 @Radium
 export default class Container extends Component {
@@ -13,7 +13,7 @@ export default class Container extends Component {
   }
 
   render() {
-    const {className, children, style} = this.props;
+    const { className, children, style } = this.props;
 
     return (
       <div className={className} style={[container, style]}>

@@ -1,7 +1,7 @@
 import Component from 'react-pure-render/component';
 import Radium from 'radium';
 import React, {PropTypes as RPT} from 'react';
-import {column, columnWidth} from './grid';
+import { column, columnWidth } from './grid';
 
 @Radium
 export default class Column extends Component {
@@ -18,7 +18,7 @@ export default class Column extends Component {
   }
 
   render() {
-    const {children, className, large, medium, phone, small, style, tablet} = this.props;
+    const { children, className, large, medium, phone, small, style, tablet } = this.props;
 
     return (
       <div
