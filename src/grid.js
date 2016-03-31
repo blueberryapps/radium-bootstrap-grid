@@ -34,9 +34,6 @@ export const container = {
   marginLeft: 'auto',
   paddingLeft: Math.floor(variables.gridGutterWidth / 2),
   paddingRight: Math.ceil(variables.gridGutterWidth / 2),
-  [`@media (min-width: ${variables.screenMSMin}px)`]: {
-    width: variables.containerMS
-  },
   [`@media (min-width: ${variables.screenSMMin}px)`]: {
     width: variables.containerSM
   },
