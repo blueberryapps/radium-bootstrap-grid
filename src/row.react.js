@@ -8,15 +8,14 @@ export default class Row extends Component {
 
   static propTypes = {
     children:  RPT.node,
-    className: RPT.string,
     style:     RPT.object
   }
 
   render() {
-    const { className, children, style } = this.props;
+    const { children, style, ...props } = this.props;
 
     return (
-      <div className={className} style={[row, style]}>
+      <div style={[row, style]} {...props}>
         {children}
         <div style={clearfix} />
       </div>

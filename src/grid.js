@@ -99,6 +99,34 @@ function createColumns() {
 }
 export const columnWidth = createColumns()
 
+export const columnHidden = {
+  xs: {
+    [`@media (max-width: ${variables.screenXSMax}px)`]: {
+      display: 'none'
+    }
+  },
+  ms: {
+    [`@media (min-width: ${variables.screenMSMin}px) and (max-width: ${variables.screenMSMax}px)`]: {
+      display: 'none'
+    }
+  },
+  sm: {
+    [`@media (min-width: ${variables.screenSMMin}px) and (max-width: ${variables.screenSMMax}px)`]: {
+      display: 'none'
+    }
+  },
+  md: {
+    [`@media (min-width: ${variables.screenMDMin}px) and (max-width: ${variables.screenMDMax}px)`]: {
+      display: 'none'
+    }
+  },
+  lg: {
+    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+      display: 'none'
+    }
+  }
+}
+
 export const clearfix = {
   clear: 'both'
 }

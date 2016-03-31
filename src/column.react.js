@@ -1,37 +1,46 @@
 import Component from 'react-pure-render/component';
 import Radium from 'radium';
 import React, {PropTypes as RPT} from 'react';
-import { column, columnWidth } from './grid';
+import { column, columnHidden, columnWidth } from './grid';
 
 @Radium
 export default class Column extends Component {
 
   static propTypes = {
-    children:  RPT.node,
-    className: RPT.string,
-    large:     RPT.number,
-    medium:    RPT.number,
-    phone:     RPT.number,
-    small:     RPT.number,
-    style:     RPT.object,
-    tablet:    RPT.number
+    children: RPT.node,
+    lg:       RPT.number,
+    lgHidden: RPT.bool,
+    md:       RPT.number,
+    mdHidden: RPT.bool,
+    ms:       RPT.number,
+    msHidden: RPT.bool,
+    sm:       RPT.number,
+    smHidden: RPT.bool,
+    style:    RPT.object,
+    xs:       RPT.number,
+    xsHidden: RPT.bool
   }
 
   render() {
-    const { children, className, large, medium, phone, small, style, tablet } = this.props;
+    const { children, lg, lgHidden, md, mdHidden, ms, msHidden, sm, smHidden, style, xs, xsHidden, ...props } = this.props;
 
     return (
       <div
-        className={className}
         style={[
           column,
-          phone && columnWidth['xs'][phone],
-          tablet && columnWidth['ms'][tablet],
-          small && columnWidth['sm'][small],
-          medium && columnWidth['md'][medium],
-          large && columnWidth['lg'][large],
-          style
+          lg && columnWidth['lg'][lg],
+          lgHidden && columnHidden['lg'],
+          md && columnWidth['md'][md],
+          mdHidden && columnHidden['md'],
+          ms && columnWidth['ms'][ms],
+          msHidden && columnHidden['ms'],
+          sm && columnWidth['sm'][sm],
+          smHidden && columnHidden['sm'],
+          style,
+          xs && columnWidth['xs'][xs],
+          xsHidden && columnHidden['xs']
         ]}
+        {...props}
       >
         {children}
       </div>

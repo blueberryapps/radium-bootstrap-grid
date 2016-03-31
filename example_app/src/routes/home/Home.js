@@ -19,113 +19,113 @@ function Home({ news }) {
         <h2 className={s.h2}>Fixed-width grid layout</h2>
         <h3 className={s.h3}>radium-bootstrap-grid</h3>
         <p>Note: Original bootstrap doesn't support 480px breakpoint.</p>
-        <Container>
+        <Container className="highlightContainer">
           <Row>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
+            >
+              <div className={s.highlightColumn}>hidden</div>
+            </Column>
+            <Column
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
             <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
-            >
-              <div className={s.highlightColumn} />
-            </Column>
-            <Column
-              large={1}
-              medium={2}
-              phone={6}
-              small={3}
-              tablet={4}
+              lg={1}
+              md={2}
+              xs={6}
+              sm={3}
+              ms={4}
             >
               <div className={s.highlightColumn} />
             </Column>
