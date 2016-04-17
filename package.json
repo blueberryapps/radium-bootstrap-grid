@@ -1,6 +1,6 @@
 {
   "name": "radium-bootstrap-grid",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "Bootstrap grid system using inline styles",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
