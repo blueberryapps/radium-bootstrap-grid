@@ -26,13 +26,10 @@ export default class Page extends Component {
       <Container>
         <Row>
           <Column
-            large={1}
-            medium={2}
-            phone={6}
-            small={3}
-            tablet={4}
+            ms={4}
+            xsHidden
           >
-            Text
+            Make a column
           </Column>
         </Row>
       </Container>
@@ -40,6 +37,18 @@ export default class Page extends Component {
   }
 
 }
+```
+
+## Supported features
+
+### Multiple stacking option
+```js
+<Column lg={1} md={3} ms={6} sm={4} xs={12}>Adjust to the device</Column>
+```
+
+### Hiding columns
+```js
+<Column lgHidden mdHidden msHidden smHidden xsHidden>Hidden forever</Column>
 ```
 
 ## Example app

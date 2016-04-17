@@ -70,7 +70,7 @@ export const column = {
   }
 };
 
-function createColumns() {
+function createColumnWidth() {
   const xs = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
     width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
   }))
@@ -97,7 +97,122 @@ function createColumns() {
 
   return {xs, ms, sm, md, lg};
 }
-export const columnWidth = createColumns()
+export const columnWidth = createColumnWidth()
+
+function createColumnOffset() {
+  const xs = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+  }))
+  const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+      marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+      marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+      marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+      marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+
+  return {xs, ms, sm, md, lg};
+}
+export const columnOffset = createColumnOffset()
+
+function createColumnPull() {
+  const xs = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+  }))
+  const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+      right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+      right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+      right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+      right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+
+  return {xs, ms, sm, md, lg};
+}
+export const columnPull = createColumnPull()
+
+function createColumnPush() {
+  const xs = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+  }))
+  const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+      left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+      left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+      left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+  const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
+    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+      left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
+    }
+  }))
+
+  return {xs, ms, sm, md, lg};
+}
+export const columnPush = createColumnPush()
+
+export const columnHidden = {
+  xs: {
+    [`@media (max-width: ${variables.screenXSMax}px)`]: {
+      display: 'none'
+    }
+  },
+  ms: {
+    [`@media (min-width: ${variables.screenMSMin}px) and (max-width: ${variables.screenMSMax}px)`]: {
+      display: 'none'
+    }
+  },
+  sm: {
+    [`@media (min-width: ${variables.screenSMMin}px) and (max-width: ${variables.screenSMMax}px)`]: {
+      display: 'none'
+    }
+  },
+  md: {
+    [`@media (min-width: ${variables.screenMDMin}px) and (max-width: ${variables.screenMDMax}px)`]: {
+      display: 'none'
+    }
+  },
+  lg: {
+    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+      display: 'none'
+    }
+  }
+}
 
 export const clearfix = {
   clear: 'both'
