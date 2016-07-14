@@ -1,6 +1,6 @@
 {
   "name": "radium-bootstrap-grid",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Bootstrap grid system using inline styles",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
@@ -49,6 +49,6 @@
   },
   "peerDependencies": {
     "radium": ">=0.15.3",
-    "react": "=>0.14.3"
+    "react": ">=0.14.3"
   }
 }
