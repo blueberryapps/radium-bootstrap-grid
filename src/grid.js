@@ -29,18 +29,25 @@ function createVariables() {
 };
 export const variables = createVariables();
 
+const mediaQueryXS = `@media (max-width: ${variables.screenXSMax}px)`;
+const mediaQueryMS = `@media (min-width: ${variables.screenMSMin}px) and (max-width: ${variables.screenMSMax}px)`;
+const mediaQuerySM = `@media (min-width: ${variables.screenSMMin}px) and (max-width: ${variables.screenSMMax}px)`;
+const mediaQueryMD = `@media (min-width: ${variables.screenMDMin}px) and (max-width: ${variables.screenMDMax}px)`;
+const mediaQueryLG = `@media (min-width: ${variables.screenLGMin}px)`;
+
+
 export const container = {
   marginRight: 'auto',
   marginLeft: 'auto',
   paddingLeft: Math.floor(variables.gridGutterWidth / 2),
   paddingRight: Math.ceil(variables.gridGutterWidth / 2),
-  [`@media (min-width: ${variables.screenSMMin}px)`]: {
+  [mediaQuerySM]: {
     width: variables.containerSM
   },
-  [`@media (min-width: ${variables.screenMDMin}px)`]: {
+  [mediaQueryMD]: {
     width: variables.containerMD
   },
-  [`@media (min-width: ${variables.screenLGMin}px)`]: {
+  [mediaQueryLG]: {
     width: variables.containerLG
   }
 };
@@ -56,16 +63,16 @@ export const column = {
   paddingLeft: Math.ceil(variables.gridGutterWidth / 2),
   paddingRight: Math.floor(variables.gridGutterWidth / 2),
   float: 'left',
-  [`@media (min-width: ${variables.screenMSMin}px)`]: {
+  [mediaQueryMS]: {
     float: 'left'
   },
-  [`@media (min-width: ${variables.screenSMMin}px)`]: {
+  [mediaQuerySM]: {
     float: 'left'
   },
-  [`@media (min-width: ${variables.screenMDMin}px)`]: {
+  [mediaQueryMD]: {
     float: 'left'
   },
-  [`@media (min-width: ${variables.screenLGMin}px)`]: {
+  [mediaQueryLG]: {
     float: 'left'
   }
 };
@@ -75,22 +82,22 @@ function createColumnWidth() {
     width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
   }))
   const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+    [mediaQueryMS]: {
       width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+    [mediaQuerySM]: {
       width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+    [mediaQueryMD]: {
       width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+    [mediaQueryLG]: {
       width: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
@@ -104,22 +111,22 @@ function createColumnOffset() {
     marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
   }))
   const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+    [mediaQueryMS]: {
       marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+    [mediaQuerySM]: {
       marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+    [mediaQueryMD]: {
       marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+    [mediaQueryLG]: {
       marginLeft: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
@@ -133,22 +140,22 @@ function createColumnPull() {
     right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
   }))
   const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+    [mediaQueryMS]: {
       right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+    [mediaQuerySM]: {
       right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+    [mediaQueryMD]: {
       right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+    [mediaQueryLG]: {
       right: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
@@ -162,22 +169,22 @@ function createColumnPush() {
     left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
   }))
   const ms = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMSMin}px)`]: {
+    [mediaQueryMS]: {
       left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const sm = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenSMMin}px)`]: {
+    [mediaQuerySM]: {
       left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const md = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenMDMin}px)`]: {
+    [mediaQueryMD]: {
       left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
   const lg = Array(variables.gridColumns + 1).fill(null).map((v, i) => ({
-    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+    [mediaQueryLG]: {
       left: `${(i / variables.gridColumns * 100).toFixed(5)}%`
     }
   }))
@@ -188,27 +195,27 @@ export const columnPush = createColumnPush()
 
 export const columnHidden = {
   xs: {
-    [`@media (max-width: ${variables.screenXSMax}px)`]: {
+    [mediaQueryXS]: {
       display: 'none'
     }
   },
   ms: {
-    [`@media (min-width: ${variables.screenMSMin}px) and (max-width: ${variables.screenMSMax}px)`]: {
+    [mediaQueryMS]: {
       display: 'none'
     }
   },
   sm: {
-    [`@media (min-width: ${variables.screenSMMin}px) and (max-width: ${variables.screenSMMax}px)`]: {
+    [mediaQuerySM]: {
       display: 'none'
     }
   },
   md: {
-    [`@media (min-width: ${variables.screenMDMin}px) and (max-width: ${variables.screenMDMax}px)`]: {
+    [mediaQueryMD]: {
       display: 'none'
     }
   },
   lg: {
-    [`@media (min-width: ${variables.screenLGMin}px)`]: {
+    [mediaQueryLG]: {
       display: 'none'
     }
   }
