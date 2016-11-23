@@ -36,35 +36,29 @@ export default class Column extends Component {
     xsPush:   RPT.number
   }
 
+  columnOptions(size) {
+    const hidden = this.props[`${size}Hidden`];
+    const offset = this.props[`${size}Offset`];
+    const pull = this.props[`${size}Pull`];
+    const push = this.props[`${size}Push`];
+
+    return [
+      hidden && columnHidden[size],
+      offset && columnOffset[size][offset],
+      pull && columnPull[size][pull],
+      push && columnPush[size][push]
+    ]
+  }
+
   render() {
     const {
       children,
       lg,
-      lgHidden,
-      lgOffset,
-      lgPull,
-      lgPush,
       md,
-      mdHidden,
-      mdOffset,
-      mdPull,
-      mdPush,
       ms,
-      msHidden,
-      msOffset,
-      msPull,
-      msPush,
       sm,
-      smHidden,
-      smOffset,
-      smPull,
-      smPush,
       style,
       xs,
-      xsHidden,
-      xsOffset,
-      xsPull,
-      xsPush,
       ...props
     } = this.props;
 
@@ -72,31 +66,16 @@ export default class Column extends Component {
       <div
         style={[
           column,
-          xsHidden && columnHidden['xs'],
-          xsOffset && columnOffset['xs'][xsOffset],
-          xsPull && columnPull['xs'][xsPull],
-          xsPush && columnPush['xs'][xsPush],
-          ms && columnWidth['ms'][ms],
-          msHidden && columnHidden['ms'],
-          msOffset && columnOffset['ms'][msOffset],
-          msPull && columnPull['ms'][msPull],
-          msPush && columnPush['ms'][msPush],
-          md && columnWidth['md'][md],
-          mdHidden && columnHidden['md'],
-          mdOffset && columnOffset['md'][mdOffset],
-          mdPull && columnPull['md'][mdPull],
-          mdPush && columnPush['md'][mdPush],
-          sm && columnWidth['sm'][sm],
-          smHidden && columnHidden['sm'],
-          xs && columnWidth['xs'][xs],
-          smOffset && columnOffset['sm'][smOffset],
-          smPull && columnPull['sm'][smPull],
-          smPush && columnPush['sm'][smPush],
-          lg && columnWidth['lg'][lg],
-          lgHidden && columnHidden['lg'],
-          lgOffset && columnOffset['lg'][lgOffset],
-          lgPull && columnPull['lg'][lgPull],
-          lgPush && columnPush['lg'][lgPush],
+          columnWidth['xs'][xs || 1],
+          columnWidth['ms'][ms || xs || 1],
+          columnWidth['sm'][sm || ms || xs || 1],
+          columnWidth['md'][md || sm || ms || xs || 1],
+          columnWidth['lg'][lg || md || sm || ms || xs || 1],
+          this.columnOptions('xs'),
+          this.columnOptions('ms'),
+          this.columnOptions('sm'),
+          this.columnOptions('md'),
+          this.columnOptions('lg'),
           style
         ]}
         {...props}
