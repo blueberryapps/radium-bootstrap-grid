@@ -1,10 +1,9 @@
-import Component from 'react-pure-render/component';
 import Radium from 'radium';
-import React, {PropTypes as RPT} from 'react';
+import React, {PropTypes as RPT, PureComponent} from 'react';
 import { column, columnHidden, columnOffset, columnPull, columnPush, columnWidth } from './grid';
 
 @Radium
-export default class Column extends Component {
+export default class Column extends PureComponent {
 
   static propTypes = {
     children: RPT.node,
