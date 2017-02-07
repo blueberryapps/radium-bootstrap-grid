@@ -13,12 +13,13 @@ $ npm install --save radium-bootstrap-grid
 Look at example directory and you need to add only:
 
 ```js
+import Component from 'react-pure-render/component';
 import Radium from 'radium';
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Column, Container, Row } from 'radium-bootstrap-grid';
 
 @Radium
-export default class Page extends PureComponent {
+export default class Page extends Component {
 
   render() {
     return (
