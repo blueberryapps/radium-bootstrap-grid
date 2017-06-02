@@ -1,4 +1,4 @@
-# Radium Bootstrap Grid
+# Radium Bootstrap Grid [![Dependency Status](https://dependencyci.com/github/blueberryapps/radium-bootstrap-grid/badge)](https://dependencyci.com/github/blueberryapps/radium-bootstrap-grid)
 
 Grid system based on Twitter Bootstrap but with additional 480px breakpoint.
 
