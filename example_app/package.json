@@ -15,7 +15,7 @@
     "eventemitter3": "1.2.0",
     "express": "4.13.4",
     "express-graphql": "0.4.13",
-    "express-jwt": "3.3.0",
+    "express-jwt": "6.0.0",
     "fastclick": "1.0.6",
     "fbjs": "0.8.0-alpha.3",
     "front-matter": "2.0.6",
